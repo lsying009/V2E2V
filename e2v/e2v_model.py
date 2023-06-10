@@ -30,7 +30,7 @@ class CistaLSTCNet(nn.Module):
           self.Dg = RecurrentConvLayer(in_channels=2*base_channels, out_channels=base_channels, kernel_size=3, stride=1, padding=1,
                activation='relu')
 
-          self.upsamp_conv = UpsampleConvLayer(in_channels=base_channels, out_channels=base_channels, kernel_size=3, stride=1, padding=0, activation='relu') #activation='relu'
+          self.upsamp_conv = UpsampleConvLayer(in_channels=base_channels, out_channels=base_channels, kernel_size=3, stride=1, padding=0, activation='relu')
           
           self.final_conv = ConvLayer(in_channels=base_channels, out_channels=1, \
                kernel_size=3, stride=1, padding=1)

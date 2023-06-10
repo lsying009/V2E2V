@@ -24,8 +24,7 @@ from model_v2e2v import V2E2VNet
 from data_readers.video_readers import VideoInterpolator, VideoReader, ImageReader
 from utils.configs import set_configs
 from utils.data_io import make_event_preview, ImageWriter, EventWriter
-# from utils.evaluate import mse, psnr, ssim, PerceptualLoss
-# from utils.image_process import normalize_image
+
 
 class V2E2V(nn.Module):
     def __init__(self, cfgs, device):

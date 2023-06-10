@@ -81,7 +81,7 @@ class Train:
             lr = self.scheduler.get_last_lr()[0]
             print('lr:', lr)
               
-            self.train_many_to_one(epoch, cfgs)
+            self.train_many_to_one(epoch)
             self.scheduler.step()
             
             torch.save({'epoch': epoch, 'state_dict': self.model.state_dict()}, 
@@ -89,7 +89,7 @@ class Train:
                             .format(self.model_name, epoch+1)))                                            
 
 
-    def train_many_to_one(self, epoch, cfgs):
+    def train_many_to_one(self, epoch):
         torch.cuda.empty_cache()
         self.model.train()
         batch_num =len(self.train_loader)
@@ -104,7 +104,6 @@ class Train:
             state = None
             output = None
             prev_img = None
-            # prevprev_img = None
            
             for s in range(len(seq_event_patch)):
                 event_patch = seq_event_patch[s].to(self.device)
@@ -114,9 +113,6 @@ class Train:
                     state = None       
                 output, state = self.model(event_patch, prev_img, state)
                 prev_img = output.clone()
-                
-            # if cfgs.display_train:
-            #     show_whole_img(event_patch, output, gt_img_patch)                
 
             loss_lpips = self.lpips_loss_fn(output, gt_img_patch,normalize=True)
             loss_mse = self.L1_loss_fn(output, gt_img_patch)
@@ -153,7 +149,7 @@ if __name__ == '__main__':
         description='Training options')
     set_configs(parser)
     cfgs = parser.parse_args()
-    cfgs.shuffle = True #if cfgs.is_recurrent else True
+    cfgs.shuffle = True
 
     model_train = Train(cfgs, device)
     model_train.run_train(cfgs)
