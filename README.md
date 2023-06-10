@@ -35,7 +35,7 @@ An example of training E2V model.
     --num_events 15000 \
 
 ### Testing
-test_data_mode='real' for [HQF](https://timostoff.github.io/20ecnn) and [ECD](https://rpg.ifi.uzh.ch/davis_data.html) data sequences, and test_data_mode='upsampled' for simulated data sequences.
+```test_data_mode='real'``` for [HQF](https://timostoff.github.io/20ecnn) and [ECD](https://rpg.ifi.uzh.ch/davis_data.html) data sequences, and ```test_data_mode='upsampled'``` for simulated data sequences.
     
     python test_e2v.py \
     --path_to_test_model pretrained/RecNet_cista-lstc.pth.tar \
