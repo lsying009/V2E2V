@@ -3,7 +3,7 @@ This repository is related to the TPAMI paper [Sensing Diversity and Sparsity Mo
 
 This code includes two parts: Events-to-video (E2V) reconstruction and video-to-events (V2E) generation. For the E2V reconstruction, a convolutional ISTA network (CISTA) is designed based on sparse representation models and the algorithm unfolding strategy. Long short-term temporal consistency (LSTC) constraints are further introduced to enhance the temporal coherence. In the V2E generation, we introduce the idea of having interleaved pixels with different contrast threshold and lowpass bandwidth and conjecture that this can help extract more useful information from intensity. Finally, V2E2V architecture is used to validate how alternative event generation strategies improve video reconstruction. 
 
-![v2e2v](flowchart/v2e2v.pdf "v2e2v_arch")
+![v2e2v](flowchart/v2e2v.png "v2e2v_arch")
 
 ## Requirements
 Perceptual loss [LPIPS](https://github.com/richzhang/PerceptualSimilarity) and [pytorch_msssim](https://github.com/VainF/pytorch-msssim) are required.
