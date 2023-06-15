@@ -35,9 +35,9 @@ class IstaBlock(nn.Module):
             stride=stride, padding=padding, activation=activation, norm=norm)
 
 
-class ConvLSTMZ0(nn.Module):
+class ConvLSTC(nn.Module):
     def __init__(self, x_size, z_size, output_size, kernel_size):
-        super(ConvLSTMZ0, self).__init__()
+        super(ConvLSTC, self).__init__()
         '''LSTC block for sparse codes Z0'''
 
         self.x_size = x_size

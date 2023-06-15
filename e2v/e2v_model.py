@@ -21,7 +21,7 @@ class CistaLSTCNet(nn.Module):
           self.W0 = ConvLayer(in_channels=base_channels, out_channels=base_channels, kernel_size=3,\
                stride=2, padding=1) 
 
-          self.P0 = ConvLSTMZ0(x_size=base_channels, z_size=2*base_channels, output_size=2*base_channels, kernel_size=3) 
+          self.P0 = ConvLSTC(x_size=base_channels, z_size=2*base_channels, output_size=2*base_channels, kernel_size=3) 
 
           lista_block = IstaBlock(base_channels=base_channels, is_recurrent=False) 
           self.lista_blocks = nn.ModuleList([lista_block for i in range(self.depth)])
