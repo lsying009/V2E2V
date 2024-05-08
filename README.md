@@ -5,6 +5,10 @@ This code includes two parts: Events-to-video (E2V) reconstruction and video-to-
 
 ![v2e2v](flowchart/V2E2V.png "v2e2v_arch")
 
+## News
+- The preprint [Enhanced Event-Based Video Reconstruction with Motion Compensation](https://arxiv.org/pdf/2403.11961) is available, which introduces CISTA-Flow (an updated version of the CISTA network) for events-to-video reconstruction. Related codes are released [CISTA-EVREAL](https://github.com/lsying009/CISTA-EVREAL).
+- We have provided codes for generating simulated dataset based on video-to-events generation: [V2E_generation](https://github.com/lsying009/V2E_Generation).
+
 ## Requirements
 Perceptual loss [LPIPS](https://github.com/richzhang/PerceptualSimilarity) and [pytorch_msssim](https://github.com/VainF/pytorch-msssim) are required.
 
@@ -81,7 +85,10 @@ An example to run the V2E2V model to test the reconstruction results based on ne
     --test_img_num 300 \
     
 ## Dataset
-We train and test our networks on simulated dataset. They can also work on real dataset [HQF](https://timostoff.github.io/20ecnn) and [ECD](https://rpg.ifi.uzh.ch/davis_data.html) data sequences.
+We train and test our networks on simulated dataset. We provide codes for generating simulated dataset based on video-to-events generation:
+- [V2E_generation](https://github.com/lsying009/V2E_Generation)
+
+Evaluation can also work on real dataset [HQF](https://timostoff.github.io/20ecnn) and [ECD](https://rpg.ifi.uzh.ch/davis_data.html) data sequences.
 
 Examples of test data can be downloaded [here](https://drive.google.com/drive/folders/1xDJMZdE7rQXYe8hdMMxYnD6gjpBdgyY2?usp=sharing). Consult the [README](data_examples/README.md) for details. 
 
