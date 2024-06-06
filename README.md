@@ -8,6 +8,7 @@ This code includes two parts: Events-to-video (E2V) reconstruction and video-to-
 ## News
 - The preprint [Enhanced Event-Based Video Reconstruction with Motion Compensation](https://arxiv.org/pdf/2403.11961) is available, which introduces CISTA-Flow (an updated version of the CISTA network) for events-to-video reconstruction. Related codes are released [CISTA-EVREAL](https://github.com/lsying009/CISTA-EVREAL).
 - We have provided codes for generating simulated dataset based on video-to-events generation: [V2E_generation](https://github.com/lsying009/V2E_Generation).
+- Update checkpoints ```cista-lstc-fixNE.pth.tar```(trained using fixed number of events per reconstruction) and ```cista-lstc-randNE.pth.tar```(trained using various number of events per reconstruction).
 
 ## Requirements
 Perceptual loss [LPIPS](https://github.com/richzhang/PerceptualSimilarity) and [pytorch_msssim](https://github.com/VainF/pytorch-msssim) are required.
